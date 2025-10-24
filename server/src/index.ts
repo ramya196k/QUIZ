@@ -46,7 +46,7 @@ app.use((req, res) => {
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    const mongoURI = "mongodb+srv://mahidhanush20_db_user:WgDK1D1hAFsWt7el@quiz.ns8ufje.mongodb.net/?appName=QUIZ" || process.env.MONGODB_URI || 'mongodb://localhost:27017/quiz-app';
+    const mongoURI = "mongodb+srv://hosannaking2019_db_user:pq8tjleMMNIy0kEj@cluster0.eocklmb.mongodb.net/?appName=Cluster0" || process.env.MONGODB_URI || 'mongodb://localhost:27017/quiz-app';
     await mongoose.connect(mongoURI);
     console.log('MongoDB connected successfully');
   } catch (error) {
