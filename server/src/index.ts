@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: "mongodb+srv://mahidhanush20_db_user:WgDK1D1hAFsWt7el@quiz.ns8ufje.mongodb.net/?appName=QUIZ" || process.env.CLIENT_URL || 'http://localhost:5173',
+  origin:  process.env.CLIENT_URL || 'http://localhost:5173',
   credentials: true,
 }));
 app.use(express.json());
@@ -46,7 +46,7 @@ app.use((req, res) => {
 // Connect to MongoDB
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/quiz-app';
+    const mongoURI = "mongodb+srv://mahidhanush20_db_user:WgDK1D1hAFsWt7el@quiz.ns8ufje.mongodb.net/?appName=QUIZ" || process.env.MONGODB_URI || 'mongodb://localhost:27017/quiz-app';
     await mongoose.connect(mongoURI);
     console.log('MongoDB connected successfully');
   } catch (error) {
