@@ -1,0 +1,22 @@
+{
+  "name": "mern-quiz-app",
+  "version": "1.0.0",
+  "description": "Full-stack quiz application with MERN stack and TypeScript",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "server:build": "cd server && npm run build",
+    "client:build": "cd client && npm run build",
+    "server:start": "cd server && npm start",
+    "client:start": "cd client && npm run preview",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build:all": "npm run server:build && npm run client:build"
+  },
+  "keywords": ["quiz", "mern", "typescript", "react", "express", "mongodb"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
