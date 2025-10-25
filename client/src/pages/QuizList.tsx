@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useQuiz } from '../context/QuizContext';
 import { quizAPI } from '../utils/api';
-import { Quiz } from '../types';
+// import { Quiz } from '../types';
 import toast from 'react-hot-toast';
 
 const QuizList: React.FC = () => {

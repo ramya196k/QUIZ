@@ -6,7 +6,7 @@ import { Quiz } from '../types';
 import toast from 'react-hot-toast';
 
 const AdminDashboard: React.FC = () => {
-  const { user } = useAuth();
+  const { } = useAuth();
   const { quizzes, setQuizzes } = useQuiz();
   const [loading, setLoading] = useState(true);
   const [showCreateForm, setShowCreateForm] = useState(false);

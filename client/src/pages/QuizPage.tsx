@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useQuiz } from '../context/QuizContext';
 import { quizAPI, resultAPI } from '../utils/api';
-import { Quiz, Question } from '../types';
+import { Question } from '../types';
 import toast from 'react-hot-toast';
 
 const QuizPage: React.FC = () => {
