@@ -1,9 +1,7 @@
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const API_BASE_URL =
-  "https://quiz-servi.onrender.com/api" ||
-  'http://localhost:5000/api';
+const API_BASE_URL =  'http://localhost:5000/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -35,12 +33,45 @@ api.interceptors.response.use(
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
-
+    
     const message = error.response?.data?.message || 'Something went wrong';
     toast.error(message);
-
+    
     return Promise.reject(error);
   }
 );
+
+// Auth API
+export const authAPI = {
+  register: (name: string, email: string, password: string) =>
+    api.post('/auth/register', { name, email, password }),
+  
+  login: (email: string, password: string) =>
+    api.post('/auth/login', { email, password }),
+  
+  getProfile: () => api.get('/auth/profile'),
+};
+
+// Quiz API
+export const quizAPI = {
+  getAllQuizzes: () => api.get('/quizzes'),
+  
+  getQuizById: (id: string) => api.get(`/quizzes/${id}`),
+  
+  createQuiz: (quizData: any) => api.post('/quizzes', quizData),
+  
+  updateQuiz: (id: string, quizData: any) => api.put(`/quizzes/${id}`, quizData),
+  
+  deleteQuiz: (id: string) => api.delete(`/quizzes/${id}`),
+};
+
+// Result API
+export const resultAPI = {
+  submitResult: (resultData: any) => api.post('/results', resultData),
+  
+  getUserResults: (userId: string) => api.get(`/results/user/${userId}`),
+  
+  getLeaderboard: () => api.get('/results/leaderboard'),
+};
 
 export default api;
