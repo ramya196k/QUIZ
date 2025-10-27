@@ -3,6 +3,7 @@ import { Quiz } from '../models/Quiz';
 import { AuthRequest } from '../middleware/auth';
 
 export const getAllQuizzes = async (req: Request, res: Response) => {
+  console.log("camed to here quizes");
   try {
     const quizzes = await Quiz.find().populate('createdBy', 'name');
     res.json({ quizzes });
