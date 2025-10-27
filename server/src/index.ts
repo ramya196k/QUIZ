@@ -16,7 +16,7 @@ const PORT = 5000;
 
 // Middleware
 app.use(cors({
-  origin: "https://quiz-front-ag6t.onrender.com",
+  origin:  "http://localhost:5173",
   credentials: true,
 }));
 app.use(express.json());
