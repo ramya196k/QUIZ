@@ -12,11 +12,11 @@ import resultRoutes from './routes/result';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
 
 // Middleware
 app.use(cors({
-  origin: "https://quiz-front-ag6t.onrender.com" || 'http://localhost:5173',
+  origin: "https://quiz-front-ag6t.onrender.com",
   credentials: true,
 }));
 app.use(express.json());
